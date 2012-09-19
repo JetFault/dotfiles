@@ -12,9 +12,6 @@ if [ ! -d "~/.vim" ]; then
   exit 1
 fi
 
-#Install Vundle cause VIM should manage VIMScripts, not git!
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-
 ### BIN ###
 ln -s `readlink -f bin` ~/
 
@@ -27,3 +24,8 @@ ln -s `readlink -f bash_aliases` ~/
 
 ### TMUX ###
 ln -s `readlink -f tmux.cconf` ~/
+
+
+#Install Vundle cause VIM should manage VIMScripts, not git!
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+vim +BundleInstall +qall
