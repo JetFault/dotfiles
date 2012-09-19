@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [[ -z "$@" ]]; then 
+  echo "Usage: pser <process name>"
+  exit 1
+fi
+
+UPDATE=""
+
+if [[ "$1" = "-f" ]]; then
+  UPDATE="true"
+  shift
+fi
+
+command="ps aux | head -1; ps aux | grep $@ | sed /grep/d | sed  /$0/d | grep --color=auto $@"
+
+if [[ "$UPDATE" = "true" ]]; then
+  while true; do
+    eval $command
+    sleep 1
+  done
+fi
+
+eval $command
