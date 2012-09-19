@@ -15,14 +15,15 @@ fi
 #Install Vundle cause VIM should manage VIMScripts, not git!
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
-#Set up our bin dir
+### BIN ###
 ln -s `readlink -f bin` ~/
 
-
 ### VIM ###
-#Set up our vimrc
-ln -s `readlink -f .vimrc` ~/
+ln -s `readlink -f vimrc` ~/
 
+### BASH ###
+ln -s `readlink -f bashrc` ~/
+ln -s `readlink -f bash_aliases` ~/
 
-ln -s `readlink -f .bashrc` ~/
-ln -s `readlink -f .bash_aliases` ~/
+### TMUX ###
+ln -s `readlink -f tmux.cconf` ~/
