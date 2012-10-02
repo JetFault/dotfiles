@@ -96,4 +96,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 
-PATH="$PATH:${HOME}"
+PATH="$PATH:${HOME}/bin"

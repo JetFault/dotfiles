@@ -1,3 +1,5 @@
+#! /bin/bash
+
 if [ ! `which vim` ]; then 
   echo "Vim not installed, let's install it!"
   if [ `which yum` ]; then
@@ -7,10 +9,10 @@ if [ ! `which vim` ]; then
   fi
 fi
 
-#if [ -d "~/.vim" ]; then
-#	echo "No vim directory, figure out why! Peace!"
-#	exit 1
-#fi
+if [ -d "${HOME}/.vim" ]; then
+	echo "No vim directory, figure out why! Peace!"
+	exit 1
+fi
 
 ### BIN ###
 ln -sf `readlink -f bin` ~/
@@ -27,5 +29,9 @@ ln -sf `readlink -f tmux.conf` ~/.tmux.conf
 
 
 #Install Vundle cause VIM should manage VIMScripts, not git!
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if [ ! -d "${HOME}/.vim/bundle/vundle" ]; then
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
 vim +BundleInstall +qall
+
+source ~/.bashrc

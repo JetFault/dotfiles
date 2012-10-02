@@ -4,10 +4,10 @@ set nocompatible
 filetype off                   
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'            " Vundle
-Bundle 'Lokaltog/vim-powerline'   " Powerline
-Bundle 'tpope/vim-fugitive'       " Git
-Bundle 'bilalq/vim-javascript'    " Javascript Indentation
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'bilalq/vim-javascript'
 filetype plugin indent on
 " -------- VUNDLE END --------
 
