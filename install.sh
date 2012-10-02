@@ -9,10 +9,11 @@ if [ ! `which vim` ]; then
   fi
 fi
 
-if [ -d "${HOME}/.vim" ]; then
-	echo "No vim directory, figure out why! Peace!"
-	exit 1
-fi
+
+### GIT ###
+git config --global core.editor vim
+git config --global user.email "jreptak@gmail.com"
+git config --global user.name "Jerry Reptak"
 
 ### BIN ###
 ln -sf `readlink -f bin` ~/
@@ -29,9 +30,15 @@ ln -sf `readlink -f tmux.conf` ~/.tmux.conf
 
 
 #Install Vundle cause VIM should manage VIMScripts, not git!
+if [ -d "${HOME}/.vim" ]; then
+	echo "No vim directory, figure out why! Peace!"
+	exit 1
+fi
+
 if [ ! -d "${HOME}/.vim/bundle/vundle" ]; then
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 vim +BundleInstall +qall
+
 
 source ~/.bashrc
