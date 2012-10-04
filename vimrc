@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bilalq/vim-javascript'
+Bundle 'scrooloose/syntastic'
 filetype plugin indent on
 " -------- VUNDLE END --------
 
