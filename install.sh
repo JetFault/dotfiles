@@ -11,12 +11,10 @@ fi
 
 
 ### GIT ###
-git config --global core.editor vim
-git config --global user.email "jreptak@gmail.com"
-git config --global user.name "Jerry Reptak"
+ln -sf `readlink -f gitconfig` ~/.gitconfig
 
 ### BIN ###
-ln -sf `readlink -f bin` ~/
+ln -sf `readlink -f bin` ~/bin
 
 ### VIM ###
 ln -sf `readlink -f vimrc` ~/.vimrc
