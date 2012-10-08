@@ -1,15 +1,5 @@
 #! /bin/bash
 
-if [ ! `which vim` ]; then 
-  echo "Vim not installed, let's install it!"
-  if [ `which yum` ]; then
-    sudo yum install vim
-  elif [ `which apt` ]; then
-    sudo apt-get install vim
-  fi
-fi
-
-
 ### GIT ###
 ln -sf `readlink -f gitconfig` ~/.gitconfig
 
@@ -20,18 +10,18 @@ ln -sf `readlink -f bin` ~/bin
 ln -sf `readlink -f vimrc` ~/.vimrc
 
 ### BASH ###
+ln -sf `readlink -f bash_profile` ~/.bash_profile
 ln -sf `readlink -f bashrc` ~/.bashrc
 ln -sf `readlink -f bash_aliases` ~/.bash_aliases
 
 ### TMUX ###
 ln -sf `readlink -f tmux.conf` ~/.tmux.conf
 
+### JSHint ###
+ln -sf `readlink -f jshintrc` ~/.jshintrc
+
 
 #Install Vundle cause VIM should manage VIMScripts, not git!
-if [ ! -d "${HOME}/.vim" ]; then
-	echo "No vim directory, figure out why! Peace!"
-	exit 1
-fi
 if [ ! -d "${HOME}/.vim/bundle/vundle" ]; then
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi

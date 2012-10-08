@@ -7,8 +7,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
-Bundle 'bilalq/vim-javascript'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'gregsexton/MatchTag'
 Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/taglist.vim'
 filetype plugin indent on
 " -------- VUNDLE END --------
 
@@ -52,9 +54,17 @@ function! JavaScriptFold()
 endfunction
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
+
+set foldlevelstart=20
 " -------- Javascript Fold END --------
 
 
 " -------- Color START --------
 let &t_Co=256
 " -------- Color END --------
+
+" -------- TagList START -------
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
+" -------- TagList END -------
