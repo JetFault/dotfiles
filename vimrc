@@ -24,9 +24,7 @@ set smartcase
 " jj stay in same cursor position
 inoremap jj <Esc>`^
 " Switching Windows easier
-imap <C-w><C-w> <Esc><C-w><C-w>
-
-" Write file as sudo
+imap <C-w><C-w> <Esc><C-w><C-w> " Write file as sudo
 cmap w!! w !sudo tee >/dev/null %
 
 " -------- Spacing START --------
@@ -68,3 +66,6 @@ let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 " -------- TagList END -------
+
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
