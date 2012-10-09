@@ -30,8 +30,8 @@ cmap w!! w !sudo tee >/dev/null %
 " -------- Spacing START --------
 set autoindent
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set backspace=2
 autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
