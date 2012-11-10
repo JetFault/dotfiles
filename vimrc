@@ -25,8 +25,11 @@ set smartcase
 
 " jj stay in same cursor position
 inoremap jj <Esc>`^
+
 " Switching Windows easier
-imap <C-w><C-w> <Esc><C-w><C-w> " Write file as sudo
+imap <C-w><C-w> <Esc><C-w><C-w> 
+
+" Write file as sudo
 cmap w!! w !sudo tee >/dev/null %
 
 " -------- Spacing START --------
