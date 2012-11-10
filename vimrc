@@ -11,6 +11,8 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'gregsexton/MatchTag'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'othree/html5.vim'
+Bundle 'kchmck/vim-coffee-script'
 filetype plugin indent on
 " -------- VUNDLE END --------
 
@@ -33,6 +35,7 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set backspace=2
+set expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
 " -------- Spacing END --------
