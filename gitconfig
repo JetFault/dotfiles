@@ -3,6 +3,7 @@
 	email = jreptak@gmail.com
 [core]
 	editor = vim
+	autocrlf = input
 [color]
     ui = auto
 [alias]

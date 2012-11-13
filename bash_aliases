@@ -29,3 +29,6 @@ jer="jreptak@jreptak.com"
 #Fun Stuff
 alias facts="curl -s randomfunfacts.com | grep '<i>' | sed 's/.*<i>\(.*\)<\/i>.*/\1/'"
 alias fact_notify='notify-send "Random Fact" "`facts`"'
+
+alias minecraft="java -jar -Xmx2048m -Xms1024m /filer/tmp2/contrib/share/minecraft.jar"
+alias eclipse="~/eclipse/eclipse"
