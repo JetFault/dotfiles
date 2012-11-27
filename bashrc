@@ -101,6 +101,6 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # Add RVM to PATH for scripting
-if [ -d "$HOME/.rvm" ]; then
-	PATH=$PATH:$HOME/.rvm/bin 
+if [ -e /etc/profile.d/rvm.sh ]; then
+  source /etc/profile.d/rvm.sh
 fi
