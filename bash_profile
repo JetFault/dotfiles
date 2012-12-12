@@ -1,1 +1,3 @@
+stty -ixon
+
 . "$HOME/.bashrc"

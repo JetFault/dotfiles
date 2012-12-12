@@ -29,6 +29,10 @@ set smartcase
 " jj stay in same cursor position
 inoremap jj <Esc>`^
 
+" Save with CTRL-S so I don't lose efficiency 
+" when reaching for mouse to test HTML
+imap <C-S>  <C-\><C-O>:w<cr> 
+
 " Switching Windows easier
 imap <C-w><C-w> <Esc><C-w><C-w> 
 
@@ -48,7 +52,7 @@ autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
 " -------- Spacing END --------
 
 
-" -------- Javascript Fold START --------
+" -------- Fold START --------
 function! JavaScriptFold() 
     setl foldmethod=syntax
     setl foldlevelstart=5
@@ -63,6 +67,7 @@ endfunction
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 
+set foldmethod=syntax
 set foldlevelstart=20
 " -------- Javascript Fold END --------
 
