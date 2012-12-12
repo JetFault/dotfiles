@@ -31,7 +31,11 @@ inoremap jj <Esc>`^
 
 " Save with CTRL-S so I don't lose efficiency 
 " when reaching for mouse to test HTML
-imap <C-S>  <C-\><C-O>:w<cr> 
+" imap <C-S> <C-\><C-O>:w<cr> 
+" imap <c-s>  <C-O>:w<cr> 
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
 
 " Switching Windows easier
 imap <C-w><C-w> <Esc><C-w><C-w> 
