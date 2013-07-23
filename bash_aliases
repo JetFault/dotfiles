@@ -18,7 +18,6 @@ alias l='ls -CF'
 #SSH
 alias lab="ssh -X jreptak@kill.rutgers.edu"
 alias slug="ssh jreptak@ruslug.rutgers.edu"
-alias peek="ssh jerry@ec2-dev02.peeknet.net"
 alias aws="ssh jreptak@ec2-184-72-208-110.compute-1.amazonaws.com"
 alias smil="ssh -C jreptak@ec2-23-22-67-45.compute-1.amazonaws.com"
 alias js="ssh -C jreptak@jreptak.com"

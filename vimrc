@@ -16,6 +16,8 @@ Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
+
+Bundle 'tomasr/molokai'
 filetype plugin indent on
 " -------- VUNDLE END --------
 
@@ -78,6 +80,9 @@ set foldlevelstart=20
 
 " -------- Color START --------
 let &t_Co=256
+colorscheme molokai
+
+hi SyntasticError ctermfg=252 ctermbg=240 guifg=#d0d0d0 guibg=#585858
 " -------- Color END --------
 
 " -------- TagList START -------
@@ -88,3 +93,7 @@ map <F4> :TlistToggle<cr>
 
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
+
+" --- Syntastic START ---
+nnoremap <F1> :SyntasticToggleMode<cr>
+" --- Syntastic END ---
