@@ -4,6 +4,7 @@ alias gc="git commit"
 alias ga="git add"
 alias gp="git push"
 alias gpl="( facts ); git pull"
+alias git="hub"
 
 alias :q="exit"
 alias vi="vim"
@@ -15,12 +16,19 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+#color
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 #SSH
 alias lab="ssh -X jreptak@kill.rutgers.edu"
 alias slug="ssh jreptak@ruslug.rutgers.edu"
-alias aws="ssh jreptak@ec2-184-72-208-110.compute-1.amazonaws.com"
 alias smil="ssh -C jreptak@ec2-23-22-67-45.compute-1.amazonaws.com"
 alias js="ssh -C jreptak@jreptak.com"
+alias ydev="ssh rjerry@horsefind.corp.yahoo.com"
+alias yneo="ssh -C showschose.corp.gq1.yahoo.com"
 
 #Variables
 jer="jreptak@jreptak.com"

@@ -9,6 +9,8 @@ EDITOR="/usr/bin/vim"
 HISTCONTROL=ignoredups:ignorespace
 HISTIGNORE="ls:pwd:exit:mount:cd"
 
+#export PROMPT_COMMAND="history -a; history -n"
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -20,13 +22,10 @@ HISTFILESIZE=4000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+PATH="/usr/local/bin:$PATH:/usr/bin"
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -65,27 +64,9 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-if [ -x notify-send ]; then
-  alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-fi
-
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -97,10 +78,19 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH"
+    PATH="$PATH:$HOME/bin"
+fi
+
+
+if [ "`uname`" == "Darwin" ]; then
+  source ~/.bashrc_mac
+fi
+
+if [ "$MACHINE_TYPE" == "Yahoo" ]; then
+    source ~/.bashrc_yahoo
 fi
 
 # Add RVM to PATH for scripting
-if [ -e /etc/profile.d/rvm.sh ]; then
-  source /etc/profile.d/rvm.sh
+if [ -e ~/.rvm/scripts/rvm ]; then
+  source ~/.rvm/scripts/rvm
 fi

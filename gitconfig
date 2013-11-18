@@ -1,9 +1,10 @@
 [user]
 	name = Jerry Reptak
-	email = jreptak@gmail.com
+	email = rjerry@yahoo-inc.com
 [core]
 	editor = vim
 	autocrlf = input
+	excludesfile = /Users/rjerry/.gitignore_global
 [color]
     ui = auto
 [alias]
@@ -13,7 +14,20 @@
 	alias = !sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	exec = "!exec "
 [merge]
     tool = vimdiff
 [web]
 	browser = /usr/bin/google-chrome
+[push]
+	default = upstream
+[diff]
+	tool = vimdiff
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[hub]
+	host = git.corp.yahoo.com

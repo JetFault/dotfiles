@@ -16,6 +16,8 @@ Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-cucumber'
 
 Bundle 'tomasr/molokai'
 filetype plugin indent on
@@ -26,7 +28,13 @@ set number
 set pastetoggle=<F2>
 set incsearch
 set ignorecase
-set smartcase
+set smartcase " Search case smartly
+
+" Where mah search at?
+set hlsearch
+
+" Sit back and use that Magic Mouse Scrolling
+set mouse=a
 
 " jj stay in same cursor position
 inoremap jj <Esc>`^
@@ -48,13 +56,14 @@ cmap w!! w !sudo tee >/dev/null %
 " -------- Spacing START --------
 set autoindent
 set smartindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set backspace=2
 set expandtab
+" autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
+" autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
+autocmd FileType make setlocal noexpandtab
 set smarttab
-autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
-autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
 " -------- Spacing END --------
 
 

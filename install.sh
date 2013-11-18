@@ -1,24 +1,26 @@
 #! /bin/bash
 
+CUR="`pwd`"
+
 ### GIT ###
-ln -sf `readlink -f gitconfig` ~/.gitconfig
+ln -sf $CUR/gitconfig ~/.gitconfig
 
 ### BIN ###
-ln -sf `readlink -f bin` ~/bin
+ln -sf $CUR/bin ~/bin
 
 ### VIM ###
-ln -sf `readlink -f vimrc` ~/.vimrc
+ln -sf $CUR/vimrc ~/.vimrc
 
 ### BASH ###
-ln -sf `readlink -f bash_profile` ~/.bash_profile
-ln -sf `readlink -f bashrc` ~/.bashrc
-ln -sf `readlink -f bash_aliases` ~/.bash_aliases
+ln -sf $CUR/bash_profile ~/.bash_profile
+ln -sf $CUR/bashrc ~/.bashrc
+ln -sf $CUR/bash_aliases ~/.bash_aliases
 
 ### TMUX ###
-ln -sf `readlink -f tmux.conf` ~/.tmux.conf
+ln -sf $CUR/tmux.conf ~/.tmux.conf
 
 ### JSHint ###
-ln -sf `readlink -f jshintrc` ~/.jshintrc
+ln -sf $CUR/jshintrc ~/.jshintrc
 
 
 #Install Vundle cause VIM should manage VIMScripts, not git!
@@ -28,8 +30,8 @@ fi
 vim +BundleInstall +qall
 
 #install powerline ubuntu font
-git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git ~/.fonts/ubuntu-mono-powerline-ttf
-fc-cache -vf
+#git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git ~/.fonts/ubuntu-mono-powerline-ttf
+#fc-cache -vf
 
 
 source ~/.bashrc
