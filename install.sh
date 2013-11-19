@@ -22,6 +22,10 @@ ln -sf $CUR/tmux.conf ~/.tmux.conf
 ### JSHint ###
 ln -sf $CUR/jshintrc ~/.jshintrc
 
+### MAC ###
+if [ "`uname`" == "Darwin" ]; then
+  ln -sf $CUR/bashrc_mac ~/.bashrc_mac
+fi
 
 #Install Vundle cause VIM should manage VIMScripts, not git!
 if [ ! -d "${HOME}/.vim/bundle/vundle" ]; then
