@@ -22,7 +22,7 @@ HISTFILESIZE=4000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-PATH="/usr/local/bin:$PATH:/usr/bin"
+export PATH="/usr/local/bin:$PATH:/usr/bin"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -90,7 +90,12 @@ if [ "$MACHINE_TYPE" == "Yahoo" ]; then
     source ~/.bashrc_yahoo
 fi
 
-# Add RVM to PATH for scripting
+# Add RVM to PATH
 if [ -e ~/.rvm/scripts/rvm ]; then
   source ~/.rvm/scripts/rvm
 fi
+
+# Add NVM to PATH
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

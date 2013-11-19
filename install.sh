@@ -12,6 +12,7 @@ ln -sf $CUR/bin ~/bin
 ln -sf $CUR/vimrc ~/.vimrc
 
 ### BASH ###
+ln -sf $CUR/profile ~/.profile
 ln -sf $CUR/bash_profile ~/.bash_profile
 ln -sf $CUR/bashrc ~/.bashrc
 ln -sf $CUR/bash_aliases ~/.bash_aliases
