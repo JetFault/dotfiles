@@ -4,7 +4,9 @@ alias gc="git commit"
 alias ga="git add"
 alias gp="git push"
 alias gpl="( facts ); git pull --rebase"
-alias git="hub"
+if [ -e "hub" ]; then
+    alias git="hub"
+fi
 
 alias :q="exit"
 alias vi="vim"
