@@ -66,6 +66,7 @@ autocmd FileType make setlocal noexpandtab
 set smarttab
 " -------- Spacing END --------
 
+set clipboard=unnamed
 
 " -------- Fold START --------
 function! JavaScriptFold() 
