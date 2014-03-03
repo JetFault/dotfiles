@@ -30,7 +30,7 @@ fi
 
 #Install Vundle cause VIM should manage VIMScripts, not git!
 if [ ! -d "${HOME}/.vim/bundle/vundle" ]; then
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	git clone git@github.com:gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 vim +BundleInstall +qall
 

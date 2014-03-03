@@ -3,6 +3,9 @@
 
 #TERM='xterm-256color'
 EDITOR="/usr/bin/vim"
+if [ -e "/usr/local/bin/vim" ]; then
+    EDITOR="/usr/local/bin/vim";
+fi
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -103,7 +106,10 @@ fi
 if [ -e ~/.rvm/scripts/rvm ]; then
   source ~/.rvm/scripts/rvm
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin
 fi
 
 # Add NVM to PATH
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
+
+export PATH
