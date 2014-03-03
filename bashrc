@@ -48,21 +48,26 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
+source ~/.git-prompt.sh
+
+export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\$(__git_ps1)\[\033[00m\]\e[0;36m\e[1;37m\$ "
+
+trap 'echo -ne "$(tput sgr0)"' DEBUG
+
+#if [ "$color_prompt" = yes ]; then
+#else
+    #PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$(__git_ps1)\$ "
+#fi
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in
+#xterm*|rxvt*)
+    #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    #;;
+#*)
+    #;;
+#esac
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
@@ -86,6 +91,10 @@ if [ "`uname`" == "Darwin" ]; then
   source ~/.bashrc_mac
 fi
 
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
+fi
+
 if [ "$MACHINE_TYPE" == "Yahoo" ]; then
     source ~/.bashrc_yahoo
 fi
@@ -93,9 +102,8 @@ fi
 # Add RVM to PATH
 if [ -e ~/.rvm/scripts/rvm ]; then
   source ~/.rvm/scripts/rvm
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
 # Add NVM to PATH
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
