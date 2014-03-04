@@ -52,8 +52,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 source ~/bin/.git-prompt.sh
+source ~/.bash_colors
 
-export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\$(__git_ps1)\[\033[00m\]\e[0;36m\e[1;37m\$ "
+export PS1="${debian_chroot:+($debian_chroot)}\[${Green}\]\u@\h\[${Color_off}\]:\[${Blue}\]\w\$(__git_ps1)\[${Color_Off}\]\[${Cyan}\]\$ \[${BWhite}\]"
 
 trap 'echo -ne "$(tput sgr0)"' DEBUG
 

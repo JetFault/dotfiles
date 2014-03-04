@@ -6,7 +6,9 @@ CUR="`pwd`"
 ln -sf $CUR/gitconfig ~/.gitconfig
 
 ### BIN ###
-ln -sf $CUR/bin ~/bin
+if [ ! -d "${HOME}/bin" ]; then
+    ln -sf $CUR/bin ~/bin
+fi
 
 ### VIM ###
 ln -sf $CUR/vimrc ~/.vimrc
@@ -14,6 +16,7 @@ ln -sf $CUR/vimrc ~/.vimrc
 ### BASH ###
 ln -sf $CUR/profile ~/.profile
 ln -sf $CUR/bash_profile ~/.bash_profile
+ln -sf $CUR/bash_colors ~/.bash_colors
 ln -sf $CUR/bashrc ~/.bashrc
 ln -sf $CUR/bash_aliases ~/.bash_aliases
 
