@@ -54,7 +54,7 @@ fi
 source ~/bin/.git-prompt.sh
 source ~/.bash_colors
 
-export PS1="${debian_chroot:+($debian_chroot)}\[${Green}\]\u@\h\[${Color_off}\]:\[${Blue}\]\w\$(__git_ps1)\[${Color_Off}\]\[${Cyan}\]\$ \[${BWhite}\]"
+export PS1="${debian_chroot:+($debian_chroot)}\[${Green}\]\u@\h\[${Color_off}\]:\[${Cyan}\]\w\$(__git_ps1)\[${Color_Off}\]\[${ICyan}\]\$ \[${BWhite}\]"
 
 trap 'echo -ne "$(tput sgr0)"' DEBUG
 
