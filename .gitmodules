@@ -1,0 +1,4 @@
+[submodule "mac-dotfiles"]
+	path = mac-dotfiles
+	url = git@github.com:JetFault/mac-dotfiles.git
+	branch = master
