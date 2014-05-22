@@ -37,9 +37,4 @@ if [ ! -d "${HOME}/.vim/bundle/vundle" ]; then
 fi
 vim +BundleInstall +qall
 
-#install powerline ubuntu font
-#git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git ~/.fonts/ubuntu-mono-powerline-ttf
-#fc-cache -vf
-
-
 source ~/.bashrc
