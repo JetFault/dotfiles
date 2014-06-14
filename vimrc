@@ -64,6 +64,7 @@ set backspace=2
 set expandtab
 " autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
 " autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
+autocmd Filetype html setlocal ts=2 sw=2 sts=2
 autocmd FileType make setlocal noexpandtab
 set smarttab
 " -------- Spacing END --------
@@ -93,6 +94,11 @@ set foldlevelstart=20
 " -------- Color START --------
 let &t_Co=256
 colorscheme molokai
+
+" Matching parents easy to know which is under cursor
+highlight MatchParen cterm=bold ctermfg=cyan
+" Transparent backgrounds
+hi Normal ctermfg=252 ctermbg=none
 
 hi SyntasticError ctermfg=252 ctermbg=240 guifg=#d0d0d0 guibg=#585858
 " -------- Color END --------
