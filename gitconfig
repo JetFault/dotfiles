@@ -1,15 +1,15 @@
 [user]
 	name = Jerry Reptak
-	email = rjerry@yahoo-inc.com
+	email = jreptak@gmail.com
 [core]
 	editor = vim
 	autocrlf = input
-	excludesfile = /Users/rjerry/.gitignore_global
-    pager = less -F -X
+	excludesfile = ~/.gitignore_global
+  pager = less -F -X
 [pager]
-    log = true
+  log = true
 [color]
-    ui = auto
+  ui = auto
 [alias]
 	hub-clone = !sh -c 'git clone git@github.com:/$1/$2.git' -
 	edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
@@ -17,10 +17,10 @@
 	alias = !sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    exec = "!exec "
-    subup = "!exec git submodule update --init"
+  exec = "!exec "
+  subup = "!exec git submodule update --init"
 [merge]
-    tool = vimdiff
+  tool = vimdiff
 [web]
 	browser = /usr/bin/google-chrome
 [push]
@@ -30,8 +30,3 @@
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[hub]
-	host = git.corp.yahoo.com

@@ -58,15 +58,17 @@ cmap w!! w !sudo tee >/dev/null %
 " -------- Spacing START --------
 set autoindent
 set smartindent
-set tabstop=4
-set shiftwidth=4
+
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set backspace=2
 set expandtab
 " autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
 " autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
 autocmd Filetype html setlocal ts=2 sw=2 sts=2
 autocmd FileType make setlocal noexpandtab
-set smarttab
+" set smarttab
 " -------- Spacing END --------
 
 set clipboard=unnamed
