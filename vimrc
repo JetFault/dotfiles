@@ -71,6 +71,17 @@ autocmd FileType make setlocal noexpandtab
 " set smarttab
 " -------- Spacing END --------
 
+" ------- Cursor Line/Column START -------
+augroup CursorLine
+  au!
+  "au VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
+  au WinLeave * setlocal nocursorline nocursorcolumn
+augroup END
+:hi CursorLine cterm=NONE ctermbg=235 ctermfg=NONE
+:nnoremap <Leader>l :set cursorline! cursorcolumn!<CR>
+" ------- Cursor Line/Column END -------
+
+
 set clipboard=unnamed
 
 " -------- Fold START --------
