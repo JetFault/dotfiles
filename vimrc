@@ -13,15 +13,17 @@ Bundle 'gregsexton/MatchTag'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-cucumber'
+Bundle 'groenewege/vim-less'
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-cucumber'
-
 Bundle 'tomasr/molokai'
+Bundle 'editorconfig/editorconfig-vim'
 filetype plugin indent on
 " -------- VUNDLE END --------
 
@@ -67,6 +69,10 @@ set expandtab
 " autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
 " autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
 autocmd Filetype html setlocal ts=2 sw=2 sts=2
+autocmd Filetype css setlocal ts=4 sw=4 sts=4
+autocmd Filetype scss setlocal ts=4 sw=4 sts=4
+autocmd Filetype sass setlocal ts=4 sw=4 sts=4
+autocmd Filetype less setlocal ts=4 sw=4 sts=4
 autocmd FileType make setlocal noexpandtab
 " set smarttab
 " -------- Spacing END --------
@@ -78,29 +84,29 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline nocursorcolumn
 augroup END
 :hi CursorLine cterm=NONE ctermbg=235 ctermfg=NONE
+"Ctrl + \ + l
 :nnoremap <Leader>l :set cursorline! cursorcolumn!<CR>
 " ------- Cursor Line/Column END -------
 
-
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " -------- Fold START --------
-function! JavaScriptFold() 
-    setl foldmethod=syntax
-    setl foldlevelstart=5
-	setl nofoldenable
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+"function! JavaScriptFold() 
+    "setl foldmethod=syntax
+    "setl foldlevelstart=5
+	"setl nofoldenable
+    "syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 
-    function! FoldText()
-        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
-au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
+    "function! FoldText()
+        "return substitute(getline(v:foldstart), '{.*', '{...}', '')
+    "endfunction
+    "setl foldtext=FoldText()
+"endfunction
+"au FileType javascript call JavaScriptFold()
+"au FileType javascript setl fen
 
-set foldmethod=syntax
-set foldlevelstart=20
+"set foldmethod=syntax
+"set foldlevelstart=20
 " -------- Javascript Fold END --------
 
 
@@ -127,4 +133,5 @@ set laststatus=2
 
 " --- Syntastic START ---
 nnoremap <F1> :SyntasticToggleMode<cr>
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 " --- Syntastic END ---

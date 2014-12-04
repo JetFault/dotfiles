@@ -1,5 +1,6 @@
 #GIT
 alias gs="git status"
+alias gd="git diff"
 alias gc="git commit"
 alias ga="git add"
 alias gp="git push"
@@ -7,6 +8,7 @@ alias gpl="( facts ); git pull --rebase"
 if [ -e "hub" ]; then
     alias git="hub"
 fi
+#alias gcd="cd \"$(git rev-parse --show-toplevel)\""
 
 alias :q="exit"
 alias vi="vim"
@@ -36,3 +38,6 @@ jer="jreptak@jreptak.com"
 #Fun Stuff
 alias facts="curl -s randomfunfacts.com | grep '<i>' | sed 's/.*<i>\(.*\)<\/i>.*/\1/'"
 alias fact_notify='notify-send "Random Fact" "`facts`"'
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'

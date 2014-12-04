@@ -24,7 +24,7 @@
 [web]
 	browser = /usr/bin/google-chrome
 [push]
-	default = upstream
+	default = simple
 [diff]
 	tool = vimdiff
 [difftool "sourcetree"]

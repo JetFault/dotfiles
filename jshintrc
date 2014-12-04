@@ -1,12 +1,9 @@
 {
   "globals": {
-    "console": false,
+    "console": false
   },
 
-  "jquery" : true,
-  "node" : true,
   "es5" : true,
-  "browser" : true,
 
   "boss" : false,
   "curly": false,
