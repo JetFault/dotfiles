@@ -10,7 +10,7 @@ fi
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
-HISTIGNORE="ls:pwd:exit:mount:cd"
+HISTIGNORE="ls:pwd:exit:mount:cd:gs"
 
 #export PROMPT_COMMAND="history -a; history -n"
 
@@ -116,6 +116,6 @@ fi
 
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/home/jerry/.nvm/nvm.sh" ] && . "/home/jerry/.nvm/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 export PATH
