@@ -26,18 +26,11 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-#SSH
-alias lab="ssh -X jreptak@kill.rutgers.edu"
-alias slug="ssh jreptak@ruslug.rutgers.edu"
-alias smil="ssh -C jreptak@ec2-23-22-67-45.compute-1.amazonaws.com"
-alias js="ssh -C jreptak@jreptak.com"
-
-#Variables
-jer="jreptak@jreptak.com"
-
 #Fun Stuff
 alias facts="curl -s randomfunfacts.com | grep '<i>' | sed 's/.*<i>\(.*\)<\/i>.*/\1/'"
 alias fact_notify='notify-send "Random Fact" "`facts`"'
 
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
+if [ ! -e "pbcopy"]; then
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+fi
