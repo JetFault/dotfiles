@@ -8,7 +8,7 @@ alias gpl="( facts ); git pull --rebase"
 if [ -e "hub" ]; then
     alias git="hub"
 fi
-#alias gcd="cd \"$(git rev-parse --show-toplevel)\""
+alias gcd="cd \"\$(git rev-parse --show-toplevel)\""
 
 alias :q="exit"
 alias vi="vim"
